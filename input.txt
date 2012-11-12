@@ -1,0 +1,8 @@
+# Path to the input data directory
+./data/
+# Path to the output data directory
+./
+# Solar modulation parameter in MV
+650
+# Geomagnetic cutoff rigidity in MV
+0
