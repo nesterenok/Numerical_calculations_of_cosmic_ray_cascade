@@ -2,7 +2,7 @@ Description of the repository
 The repository contains the calculated yield functions of nucleon directed differential fluxes and the C++ code necessary for calculation of atmospheric particle fluxes.
 
 Suggested data citation
-Aleksandr Nesterenok, Numerical calculations of cosmic ray cascade in the Earth's atmosphere - Results for nucleon spectra, Nuclear Instruments in Physics Research B, in press.
+Aleksandr Nesterenok, Numerical calculations of cosmic ray cascade in the Earth's atmosphere - Results for nucleon spectra, Nuclear Instruments in Physics Research B 295, 99-106, 2013.
 
 Description of the data files
 The yield functions of nucleon fluxes induced by prymary protons are located in the directory "./_p_" . The yield functions of nucleon fluxes induced by prymary alpha-particles are located in the directory "./_a_" . There is a file in each directory - "id_file_p_.txt" and "id_file_a_.txt", respectively. Each row in these files includes the identification suffix of data file, the energy interval of primary particle (the minimal and maximal energy), the number of primary particles, for which the simulations were performed.
