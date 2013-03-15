@@ -137,7 +137,7 @@ double cumulative_spectrum::get_flux(double cutoff_rig, double sol_mod_par, doub
 {
 	bool is_found = false;
 	int i;
-	double rigidity, flux;
+	double rigidity, flux=0.;
 
 	rigidity = sqrt((energy + proton_mass_energy)*(energy + proton_mass_energy) - proton_mass_energy *proton_mass_energy) 
 		*particle->mass_no/particle->charge;
@@ -157,22 +157,22 @@ double cumulative_spectrum::get_flux(double cutoff_rig, double sol_mod_par, doub
 
 double cumulative_spectrum::get_integral_flux(double cutoff_rig, double sol_mod_par, double cth_min, double cth_max, double en_min, double en_max)
 {
-	double en, incr = 1.01, flux = 0.;
+	double en, incr = 1.001, flux = 0.;
 	
-	for (en = en_min; en < en_max; en *= incr) 
+	for (en = en_min; en < en_max/(0.5+0.5*incr); en *= incr) 
 	{
-		flux += get_flux(cutoff_rig, sol_mod_par, en*(incr/2+0.5)) *en*(incr-1);
+		flux += get_flux(cutoff_rig, sol_mod_par, en*(0.5+0.5*incr)) *en*(incr-1);
 	}
 	return 2*M_PI*(cth_max - cth_min) *flux;
 }
 
 double cumulative_spectrum::get_area_flux(double cutoff_rig, double sol_mod_par, double cth_min, double cth_max, double en_min, double en_max)
 {
-	double en, incr = 1.01, flux = 0.;
+	double en, incr = 1.001, flux = 0.;
 	
-	for (en = en_min; en < en_max; en *= incr) 
+	for (en = en_min; en < en_max/(0.5+0.5*incr); en *= incr) 
 	{
-		flux += get_flux(cutoff_rig, sol_mod_par, en*(incr/2+0.5)) *en*(incr-1);
+		flux += get_flux(cutoff_rig, sol_mod_par, en*(0.5+0.5*incr)) *en*(incr-1);
 	}
 	return M_PI*(cth_max*cth_max - cth_min*cth_min) *flux;
 }

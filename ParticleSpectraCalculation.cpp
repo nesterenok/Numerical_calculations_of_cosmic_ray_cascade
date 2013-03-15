@@ -301,7 +301,7 @@ void make_spectrum(const std::string &input_data_path, const std::string &output
 			if (row > 0 && col > 0) outfile.precision(1);
 			outfile << temp_array[row][col+1] << "	";
 		}
-		outfile << endl;
+		if (row < no_rows-1) outfile << endl;
 	}
 	outfile.close();
 

@@ -1,6 +1,6 @@
 
 #include "ParameterGrid.h"
-#include "PrimaryCosmicRaySpectrum.h"
+#include "PrimaryParticle.h"
 
 parameter_interval::parameter_interval(string str, double e_min, double e_max, int no_p)
 : en_min(e_min), en_max(e_max)

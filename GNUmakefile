@@ -16,7 +16,7 @@ ParticleSpectraCalculation.o : PrimaryCosmicRaySpectrum.h ParameterGrid.h Consta
 
 PrimaryCosmicRaySpectrum.o : PrimaryCosmicRaySpectrum.h PrimaryParticle.h
 
-ParameterGrid.o : ParameterGrid.h PrimaryCosmicRaySpectrum.h
+ParameterGrid.o : ParameterGrid.h PrimaryParticle.h
 
 .PHONY : clean
 clean :
